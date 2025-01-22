@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "giritechmisc:item/single_use_wirecutter"
+    "layer0": "giritechmisc:item/single_use_wire_cutter"
   }
 }

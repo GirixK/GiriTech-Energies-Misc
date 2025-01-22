@@ -15,7 +15,7 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_SAW = makeTool("saw");
     public static final ItemEntry<Item> SINGLE_USE_FILE = makeTool("file");
     public static final ItemEntry<Item> SINGLE_USE_WRENCH = makeTool("wrench");
-    public static final ItemEntry<Item> SINGLE_USE_WIRECUTTER = makeTool("wirecutter");
+    public static final ItemEntry<Item> SINGLE_USE_WIRECUTTER = makeTool("wire_cutter");
     public static final ItemEntry<Item> SINGLE_USE_CROWBAR = makeTool("crowbar");
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET = makeTool("mallet");
 
@@ -25,7 +25,7 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_SAW_CAST = makeCast("saw");
     public static final ItemEntry<Item> SINGLE_USE_FILE_CAST = makeCast("file");
     public static final ItemEntry<Item> SINGLE_USE_WRENCH_CAST = makeCast("wrench");
-    public static final ItemEntry<Item> SINGLE_USE_WIRECUTTER_CAST = makeCast("wirecutter");
+    public static final ItemEntry<Item> SINGLE_USE_WIRECUTTER_CAST = makeCast("wire_cutter");
     public static final ItemEntry<Item> SINGLE_USE_CROWBAR_CAST = makeCast("crowbar");
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET_CAST = makeCast("mallet");
 
@@ -39,7 +39,7 @@ public class GTEMiscItems {
     private static ItemEntry<Item> makeTool (String toolType) {
         return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
                 .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
-                .tag(TagUtil.createItemTag("tools/" + (toolType.equals("wirecutter") ? "wire_cutter" : toolType) + (toolType.equals("wrench") ? "es" : "s"), false))
+                .tag(TagUtil.createItemTag("tools/" + toolType + (toolType.equals("wrench") ? "es" : "s")))
                 .register();
     }
     public static void init() {}
