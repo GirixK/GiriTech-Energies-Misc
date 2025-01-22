@@ -28,13 +28,16 @@ public class GTEMiscMachines {
 
     public static final MachineDefinition[] TOOL_CASTING_MACHINE = registerTieredMachines("tool_casting_machine", (holder, tier) -> new
             SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
-            .rotationState(RotationState.NON_Y_AXIS)
-            .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("tool_casting_machine"), GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
             .recipeType(GTEMiscRecipeTypes.TOOL_CASTING_RECIPES)
             .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+            .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("tool_casting_machine"), GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
+            .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
+            .rotationState(RotationState.NON_Y_AXIS)
             .workableTieredHullRenderer(GTCEu.id("block/machines/fluid_solidifier"))
             .register(), GTValues.tiersBetween(LV, EV));
 
+
+    // I want this separated so here's a comment to make it look better
     private static MachineDefinition[] registerTieredMachines(String name, BiFunction<IMachineBlockEntity, Integer, MetaMachine> factory, BiFunction<Integer, MachineBuilder<MachineDefinition>, MachineDefinition> builder, int... tiers) {
         MachineDefinition[] definitions = new MachineDefinition[GTValues.TIER_COUNT];
         for (int tier : tiers) {
@@ -43,6 +46,7 @@ public class GTEMiscMachines {
         }
         return definitions;
     }
+
     public static MachineDefinition[] registerSimpleMachines(String name, GTRecipeType recipeType, Int2IntFunction tankScalingFunction) {
         return registerSimpleMachines(name, recipeType, tankScalingFunction, ELECTRIC_TIERS);
     }
@@ -50,10 +54,7 @@ public class GTEMiscMachines {
     public static MachineDefinition[] registerSimpleMachines(String name, GTRecipeType recipeType) {
         return registerSimpleMachines(name, recipeType, defaultTankSizeFunction);
     }
-    public static MachineDefinition[] registerSimpleMachines(String name,
-                                                             GTRecipeType recipeType,
-                                                             Int2IntFunction tankScalingFunction,
-                                                             int... tiers) {
+    public static MachineDefinition[] registerSimpleMachines(String name, GTRecipeType recipeType, Int2IntFunction tankScalingFunction, int... tiers) {
         return registerTieredMachines(name, (holder, tier) -> new SimpleTieredMachine(holder, tier, tankScalingFunction), (tier, builder) -> builder
                 .langValue("%s %s %s".formatted(VLVH[tier], toEnglishName(name), VLVT[tier]))
                 .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id(name), recipeType))

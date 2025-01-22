@@ -1,9 +1,6 @@
 package com.girix.gtemisc;
 
-import com.girix.gtemisc.common.data.GTEMiscCreativeModeTabs;
-import com.girix.gtemisc.common.data.GTEMiscItems;
-import com.girix.gtemisc.common.data.GTEMiscMachines;
-import com.girix.gtemisc.common.data.GTEMiscRecipeTypes;
+import com.girix.gtemisc.common.data.*;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -45,7 +42,13 @@ public class GiriTechMisc {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
+
+        GTEMISC_REGISTRATE.registerRegistrate();
     }
+
+//    public static ResourceLocation id(String path) {
+//        return new ResourceLocation(MOD_ID, path);
+//    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {

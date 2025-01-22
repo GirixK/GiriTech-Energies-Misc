@@ -1,6 +1,7 @@
 package com.girix.gtemisc.common.data;
 
 import com.girix.gtemisc.GiriTechMisc;
+import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.network.chat.Component;
@@ -12,7 +13,7 @@ public class GTEMiscCreativeModeTabs {
     public static RegistryEntry<CreativeModeTab> GTE_MISC = GTEMISC_REGISTRATE.defaultCreativeTab(GiriTechMisc.MOD_ID,
             builder -> builder.displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(GiriTechMisc.MOD_ID, GTEMISC_REGISTRATE))
                     .title(Component.literal("GiriTech Energies: Misc"))
-                    .icon(GTEMiscItems.TEST_SCREWDRIVER_CAST::asStack)
+                    .icon(() -> GTEMiscMachines.TOOL_CASTING_MACHINE[GTValues.HV].asStack())
                     .build())
             .register();
     static {

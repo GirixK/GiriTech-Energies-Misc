@@ -1,5 +1,6 @@
 package com.girix.gtemisc;
 
+import com.girix.gtemisc.common.data.GTEMiscRecipeInit;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -32,7 +33,7 @@ public class GiriTechMiscGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        //CustomRecipes.init(provider);
+        GTEMiscRecipeInit.init(provider);
     }
     
     // If you have custom ingredient types, uncomment this & change to match your capability.
