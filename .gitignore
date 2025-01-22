@@ -30,3 +30,5 @@ bin/
 
 run/
 run-data/
+
+src/generated/resources/.cache/
