@@ -1,6 +1,7 @@
 package com.girix.gtemisc;
 
 import com.girix.gtemisc.common.data.*;
+import com.girix.gtemisc.data.GTEMiscDatagen;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -43,6 +44,7 @@ public class GiriTechMisc {
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
 
+        GTEMiscDatagen.init();
         GTEMISC_REGISTRATE.registerRegistrate();
     }
 
