@@ -34,7 +34,7 @@ public class GTEMiscMachines {
             .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
             .rotationState(RotationState.NON_Y_AXIS)
             .workableTieredHullRenderer(GTCEu.id("block/machines/fluid_solidifier"))
-            .register(), GTValues.tiersBetween(LV, EV));
+            .register(), GTValues.tiersBetween(MV, EV));
 
 
     // I want this separated so here's a comment to make it look better

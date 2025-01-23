@@ -1,7 +1,6 @@
 {
   "block.giritechmisc.ev_tool_casting_machine": "§5Advanced Tool Casting Machine III§r",
   "block.giritechmisc.hv_tool_casting_machine": "§6Advanced Tool Casting Machine II§r",
-  "block.giritechmisc.lv_tool_casting_machine": "Basic Tool Casting Machine §r",
   "block.giritechmisc.mv_tool_casting_machine": "§bAdvanced Tool Casting Machine §r",
   "item.giritechmisc.single_use_crowbar": "Single-use Crowbar",
   "item.giritechmisc.single_use_crowbar_cast": "Crowbar Cast",
