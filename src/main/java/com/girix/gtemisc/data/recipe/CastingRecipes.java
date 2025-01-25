@@ -72,8 +72,8 @@ public class CastingRecipes {
                     .duration(entry.getValue().getRight()*20)
                     .EUt(96);
 
-            GTRecipeBuilder wirecutterBuilder =
-            TOOL_CASTING_RECIPES.recipeBuilder("cast_single_use_wirecutter_from_" + entry.getKey().getTranslationKey())
+            GTRecipeBuilder wireCutterBuilder =
+            TOOL_CASTING_RECIPES.recipeBuilder("cast_single_use_wire_cutter_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_WIRE_CUTTER_CAST)
                     .duration(entry.getValue().getRight()*20)
@@ -93,7 +93,7 @@ public class CastingRecipes {
                 sawBuilder.outputItems(GTEMiscItems.SINGLE_USE_SAW.asStack(amount));
                 fileBuilder.outputItems(GTEMiscItems.SINGLE_USE_FILE.asStack(amount));
                 wrenchBuilder.outputItems(GTEMiscItems.SINGLE_USE_WRENCH.asStack(amount));
-                wirecutterBuilder.outputItems(GTEMiscItems.SINGLE_USE_WIRE_CUTTER.asStack(amount));
+                wireCutterBuilder.outputItems(GTEMiscItems.SINGLE_USE_WIRE_CUTTER.asStack(amount));
                 crowbarBuilder.outputItems(GTEMiscItems.SINGLE_USE_CROWBAR.asStack(amount));
                 outputAmount -= 64;
             }
@@ -103,7 +103,7 @@ public class CastingRecipes {
             sawBuilder.save(provider);
             fileBuilder.save(provider);
             wrenchBuilder.save(provider);
-            wirecutterBuilder.save(provider);
+            wireCutterBuilder.save(provider);
             crowbarBuilder.save(provider);
         }
 
