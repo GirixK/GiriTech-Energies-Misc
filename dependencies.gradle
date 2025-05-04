@@ -1,0 +1,34 @@
+dependencies {
+    compileOnly(libs.jetbrains.annotations)
+
+    // LDLib
+    modImplementation(forge.ldlib)
+
+    // Registrate
+    modImplementation(forge.registrate)
+
+    // Configuration
+    modImplementation(forge.configuration)
+
+    // GTCEu
+    modImplementation(variantOf(forge.gtceu) { classifier("slim") })
+
+    // Mixin (& Extras)
+    annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
+    annotationProcessor(forge.mixinExtras.common)
+    api(forge.mixinExtras.common)
+
+    // Recipe Viewers
+    modCompileOnly(forge.bundles.jei)
+    modCompileOnly(forge.emi)
+
+    // WAILA-likes
+    modImplementation(forge.jade)
+
+    // Curios
+    modImplementation(forge.curios)
+
+    // AE2
+    modImplementation(forge.ae2)
+
+}

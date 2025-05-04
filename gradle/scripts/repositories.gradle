@@ -1,0 +1,54 @@
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+    maven { // Curse Forge File
+        url = "https://cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        name = "Modmaven"
+        url = "https://modmaven.dev/"
+        content {
+            includeGroup 'appeng'
+        }
+    }
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/releases/"
+    }
+    maven {
+        name = 'FirstDarkDev'
+        url = 'https://maven.firstdarkdev.xyz/snapshots/'
+    }
+    maven { // Registrate
+        url = "https://maven.tterrag.com/"
+        content {
+            // need to be specific here due to version overlaps
+            includeGroup("com.tterrag.registrate")
+        }
+    }
+    maven { // Patchouli, JEI
+        name = "BlameJared"
+        url = "https://maven.blamejared.com/"
+    }
+    maven { // Curios
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name = "tterrag maven"
+        url = "https://maven.tterrag.com/"
+    }
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
+
+}
