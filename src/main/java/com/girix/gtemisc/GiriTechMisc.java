@@ -30,6 +30,7 @@ public class GiriTechMisc {
 
         GTEMiscCreativeModeTabs.init();
         GTEMiscItems.init();
+        GTEMiscConfig.init();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
