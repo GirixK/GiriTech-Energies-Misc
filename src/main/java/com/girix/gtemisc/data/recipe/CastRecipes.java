@@ -1,7 +1,9 @@
 package com.girix.gtemisc.data.recipe;
 
 import com.girix.gtemisc.GTEMiscConfig;
+
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -30,9 +32,10 @@ public class CastRecipes {
         }
     }
 
-    private static void castFormingRecipeHelper (Consumer<FinishedRecipe> provider, String recipeID, ItemStack resultItem, TagKey<Item> craftingTag) {
+    private static void castFormingRecipeHelper(Consumer<FinishedRecipe> provider, String recipeID,
+                                                ItemStack resultItem, TagKey<Item> craftingTag) {
         FORMING_PRESS_RECIPES.recipeBuilder("single_use_" + recipeID + "_cast_forming")
-                .duration(10*20)
+                .duration(10 * 20)
                 .EUt(120)
                 .inputItems(SHAPE_EMPTY.asStack())
                 .inputItems(craftingTag)

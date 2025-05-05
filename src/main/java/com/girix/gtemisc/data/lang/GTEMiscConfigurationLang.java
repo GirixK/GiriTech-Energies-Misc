@@ -2,6 +2,7 @@ package com.girix.gtemisc.data.lang;
 
 import com.girix.gtemisc.GTEMiscConfig;
 import com.girix.gtemisc.GiriTechMisc;
+
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.format.ConfigFormats;
@@ -29,6 +30,5 @@ public class GTEMiscConfigurationLang {
                 dfs(provider, added, objectValue.get());
             }
         }
-
     }
 }

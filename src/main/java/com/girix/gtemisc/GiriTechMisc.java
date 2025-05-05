@@ -2,6 +2,7 @@ package com.girix.gtemisc;
 
 import com.girix.gtemisc.common.data.*;
 import com.girix.gtemisc.data.GTEMiscDatagen;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -9,6 +10,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,11 +18,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(GiriTechMisc.MOD_ID)
 public class GiriTechMisc {
+
     public static final String MOD_ID = "giritechmisc";
     public static final Logger LOGGER = LogManager.getLogger();
     public static GTRegistrate GTEMISC_REGISTRATE = GTRegistrate.create(GiriTechMisc.MOD_ID);
@@ -49,17 +53,15 @@ public class GiriTechMisc {
         GTEMISC_REGISTRATE.registerRegistrate();
     }
 
-//    public static ResourceLocation id(String path) {
-//        return new ResourceLocation(MOD_ID, path);
-//    }
+    // public static ResourceLocation id(String path) {
+    // return new ResourceLocation(MOD_ID, path);
+    // }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-        });
+        event.enqueueWork(() -> {});
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-    }
+    private void clientSetup(final FMLClientSetupEvent event) {}
 
     // You MUST have this for custom materials.
     // Remember to register them not to GT's namespace, but your own.
@@ -69,12 +71,12 @@ public class GiriTechMisc {
 
     // As well as this.
     private void addMaterials(MaterialEvent event) {
-        //CustomMaterials.init();
+        // CustomMaterials.init();
     }
 
     // This is optional, though.
     private void modifyMaterials(PostMaterialEvent event) {
-        //CustomMaterials.modify();
+        // CustomMaterials.modify();
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {

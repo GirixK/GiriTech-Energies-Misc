@@ -2,8 +2,10 @@ package com.girix.gtemisc.common.data;
 
 import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
-import com.tterrag.registrate.util.entry.ItemEntry;
+
 import net.minecraft.world.item.Item;
+
+import com.tterrag.registrate.util.entry.ItemEntry;
 
 import static com.girix.gtemisc.GiriTechMisc.GTEMISC_REGISTRATE;
 
@@ -29,19 +31,18 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_CROWBAR_CAST = makeCast("crowbar");
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET_CAST = makeCast("mallet");
 
-
-    private static ItemEntry<Item> makeCast (String toolType) {
+    private static ItemEntry<Item> makeCast(String toolType) {
         return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
                 .lang(FormattingUtil.toEnglishName(toolType) + " Cast")
                 .register();
     }
 
-    private static ItemEntry<Item> makeTool (String toolType) {
+    private static ItemEntry<Item> makeTool(String toolType) {
         return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
                 .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
                 .tag(TagUtil.createModItemTag("tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s")))
                 .register();
     }
-    public static void init() {}
 
+    public static void init() {}
 }
