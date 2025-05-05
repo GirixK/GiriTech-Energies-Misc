@@ -39,7 +39,7 @@ public class GTEMiscItems {
     private static ItemEntry<Item> makeTool (String toolType) {
         return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
                 .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
-                .tag(TagUtil.createItemTag("tools/" + toolType + (toolType.equals("wrench") ? "es" : "s")))
+                .tag(TagUtil.createModItemTag("tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s")))
                 .register();
     }
     public static void init() {}

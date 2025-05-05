@@ -1,6 +1,6 @@
 [versions]
-ldlib = "1.0.34"
-gtceu = "1.6.4"
+ldlib = "1.0.39"
+gtceu = "1.7.0-SNAPSHOT"
 registrate = "MC1.20-1.3.11"
 configuration = "2.2.0"
 mixinExtras = "0.2.0"
@@ -22,9 +22,11 @@ registrate                = { module = "com.tterrag.registrate:Registrate", vers
 configuration             = { module = "dev.toma.configuration:configuration-forge-1.20.1", version.ref = "configuration" }
 mixinExtras-common        = { module = "io.github.llamalad7:mixinextras-common", version.ref = "mixinExtras" }
 mixinExtras-forge         = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinExtras" }
+
 jei-common-api            = { module = "mezz.jei:jei-1.20.1-common-api", version.ref = "jei" }
 jei-forge-api             = { module = "mezz.jei:jei-1.20.1-forge-api", version.ref = "jei" }
 jei-forge-impl            = { module = "mezz.jei:jei-1.20.1-forge", version.ref = "jei" }
+
 emi                       = { module = "dev.emi:emi-forge", version.ref = "emi" }
 ae2                       = { module = "appeng:appliedenergistics2-forge", version.ref = "ae2" }
 curios                    = { module = "top.theillusivec4.curios:curios-forge", version.ref = "curios" }
