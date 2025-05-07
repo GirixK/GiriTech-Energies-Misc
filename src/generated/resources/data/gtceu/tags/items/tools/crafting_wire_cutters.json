@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_wire_cutter"
+    {
+      "id": "giritechmisc:single_use_wire_cutter",
+      "required": false
+    }
   ]
 }

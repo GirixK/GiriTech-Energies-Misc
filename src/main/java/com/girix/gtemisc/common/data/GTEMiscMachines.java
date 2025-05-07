@@ -1,5 +1,7 @@
 package com.girix.gtemisc.common.data;
 
+import com.girix.gtemisc.GTEMiscConfig;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -28,17 +30,26 @@ public class GTEMiscMachines {
         GTEMISC_REGISTRATE.creativeModeTab(() -> GTEMiscCreativeModeTabs.GTE_MISC);
     }
 
-    public static final MachineDefinition[] TOOL_CASTING_MACHINE = registerTieredMachines("tool_casting_machine",
-            (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
-                    .recipeType(GTEMiscRecipeTypes.TOOL_CASTING_RECIPES)
-                    .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
-                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("tool_casting_machine"),
-                            GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
-                    .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
-                    .rotationState(RotationState.NON_Y_AXIS)
-                    .workableTieredHullRenderer(GTCEu.id("block/machines/fluid_solidifier"))
-                    .register(),
-            GTValues.tiersBetween(MV, EV));
+    public static final MachineDefinition[] TOOL_CASTING_MACHINE;
+
+    static {
+        if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
+            TOOL_CASTING_MACHINE = registerTieredMachines("tool_casting_machine",
+                    (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
+                            .recipeType(GTEMiscRecipeTypes.TOOL_CASTING_RECIPES)
+                            .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+                            .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("tool_casting_machine"),
+                                    GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
+                            .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
+                            .rotationState(RotationState.NON_Y_AXIS)
+                            .workableTieredHullRenderer(GTCEu.id("block/machines/fluid_solidifier"))
+                            .register(),
+                    GTValues.tiersBetween(MV, EV));
+        } else {
+            TOOL_CASTING_MACHINE = null;
+        }
+
+    }
 
     // I want this separated so here's a comment to make it look better
     private static MachineDefinition[] registerTieredMachines(String name,

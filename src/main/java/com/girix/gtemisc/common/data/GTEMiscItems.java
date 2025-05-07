@@ -1,6 +1,7 @@
 package com.girix.gtemisc.common.data;
 
-import com.gregtechceu.gtceu.api.data.tag.TagUtil;
+import com.girix.gtemisc.GTEMiscConfig;
+
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 
 import net.minecraft.world.item.Item;
@@ -32,16 +33,23 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET_CAST = makeCast("mallet");
 
     private static ItemEntry<Item> makeCast(String toolType) {
-        return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
-                .lang(FormattingUtil.toEnglishName(toolType) + " Cast")
-                .register();
+        if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
+            return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
+                    .lang(FormattingUtil.toEnglishName(toolType) + " Cast")
+                    .register();
+        } else {
+            return null;
+        }
     }
 
     private static ItemEntry<Item> makeTool(String toolType) {
-        return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
-                .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
-                .tag(TagUtil.createModItemTag("tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s")))
-                .register();
+        if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
+            return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
+                    .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
+                    .register();
+        } else {
+            return null;
+        }
     }
 
     public static void init() {}

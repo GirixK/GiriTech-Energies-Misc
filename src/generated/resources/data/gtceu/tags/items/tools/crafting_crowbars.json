@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_crowbar"
+    {
+      "id": "giritechmisc:single_use_crowbar",
+      "required": false
+    }
   ]
 }

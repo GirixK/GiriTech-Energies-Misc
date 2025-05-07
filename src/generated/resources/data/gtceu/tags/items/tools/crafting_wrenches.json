@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_wrench"
+    {
+      "id": "giritechmisc:single_use_wrench",
+      "required": false
+    }
   ]
 }
