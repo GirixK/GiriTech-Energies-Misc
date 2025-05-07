@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_hammer"
+    {
+      "id": "giritechmisc:single_use_hammer",
+      "required": false
+    }
   ]
 }

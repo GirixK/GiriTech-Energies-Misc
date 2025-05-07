@@ -10,7 +10,7 @@ public class GTEMiscConfig {
 
     public static GTEMiscConfig INSTANCE;
 
-    public static void init() {
+    static {
         INSTANCE = Configuration.registerConfig(GTEMiscConfig.class, ConfigFormats.yaml()).getConfigInstance();
     }
 

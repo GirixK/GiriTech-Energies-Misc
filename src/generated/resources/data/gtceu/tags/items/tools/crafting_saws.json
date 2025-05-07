@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_saw"
+    {
+      "id": "giritechmisc:single_use_saw",
+      "required": false
+    }
   ]
 }

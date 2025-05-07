@@ -1,5 +1,8 @@
 {
   "values": [
-    "giritechmisc:single_use_file"
+    {
+      "id": "giritechmisc:single_use_file",
+      "required": false
+    }
   ]
 }

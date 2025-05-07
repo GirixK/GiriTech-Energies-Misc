@@ -1,8 +1,12 @@
 package com.girix.gtemisc.common.data;
 
+import com.girix.gtemisc.GTEMiscConfig;
+
 import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -32,16 +36,24 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET_CAST = makeCast("mallet");
 
     private static ItemEntry<Item> makeCast(String toolType) {
-        return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
-                .lang(FormattingUtil.toEnglishName(toolType) + " Cast")
-                .register();
+        if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
+            return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
+                    .lang(FormattingUtil.toEnglishName(toolType) + " Cast")
+                    .register();
+        } else {
+            return null;
+        }
     }
 
     private static ItemEntry<Item> makeTool(String toolType) {
-        return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
-                .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
-                .tag(TagUtil.createModItemTag("tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s")))
-                .register();
+        if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
+            return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
+                    .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
+                    //.tag(TagUtil.optionalTag(BuiltInRegistries.ITEM, new ResourceLocation("gtceu", "tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s"))))
+                    .register();
+        } else {
+            return null;
+        }
     }
 
     public static void init() {}
