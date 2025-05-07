@@ -2,11 +2,8 @@ package com.girix.gtemisc.common.data;
 
 import com.girix.gtemisc.GTEMiscConfig;
 
-import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -49,7 +46,6 @@ public class GTEMiscItems {
         if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
             return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
                     .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
-                    //.tag(TagUtil.optionalTag(BuiltInRegistries.ITEM, new ResourceLocation("gtceu", "tools/crafting_" + toolType + (toolType.equals("wrench") ? "es" : "s"))))
                     .register();
         } else {
             return null;
