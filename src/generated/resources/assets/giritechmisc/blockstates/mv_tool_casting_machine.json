@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "giritechmisc:block/machine/mv_tool_casting_machine",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "giritechmisc:block/machine/mv_tool_casting_machine"
+    },
+    "facing=south": {
+      "model": "giritechmisc:block/machine/mv_tool_casting_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "giritechmisc:block/machine/mv_tool_casting_machine",
+      "y": 270
+    }
+  }
+}

@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import static com.girix.gtemisc.common.data.GTEMiscRecipeTypes.TOOL_CASTING_RECIPES;
+import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class CastingRecipes {
 
@@ -41,49 +42,49 @@ public class CastingRecipes {
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_HAMMER_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder screwdriverBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_screwdriver_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_SCREWDRIVER_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder sawBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_saw_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_SAW_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder fileBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_file_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_FILE_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder wrenchBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_wrench_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_WRENCH_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder wireCutterBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_wire_cutter_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_WIRE_CUTTER_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             GTRecipeBuilder crowbarBuilder = TOOL_CASTING_RECIPES
                     .recipeBuilder("cast_single_use_crowbar_from_" + entry.getKey().getTranslationKey())
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_CROWBAR_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             while (outputAmount > 0) {
                 int amount = Math.min(64, outputAmount);
@@ -115,7 +116,7 @@ public class CastingRecipes {
                     .inputFluids(entry.getKey().copy())
                     .notConsumable(GTEMiscItems.SINGLE_USE_SOFT_MALLET_CAST)
                     .duration(entry.getValue().getRight() * 20)
-                    .EUt(96);
+                    .EUt(VA[MV], 2);
 
             while (outputAmount > 0) {
                 int amount = Math.min(64, outputAmount);

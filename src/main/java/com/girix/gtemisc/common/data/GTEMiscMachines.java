@@ -42,7 +42,7 @@ public class GTEMiscMachines {
                                     GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
                             .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
                             .rotationState(RotationState.NON_Y_AXIS)
-                            .workableTieredHullRenderer(GTCEu.id("block/machines/fluid_solidifier"))
+                            .workableTieredHullModel(GTCEu.id("block/machines/fluid_solidifier"))
                             .register(),
                     GTValues.tiersBetween(MV, EV));
         } else {
@@ -84,7 +84,7 @@ public class GTEMiscMachines {
                         .recipeType(recipeType)
                         .recipeModifier(
                                 GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
-                        .workableTieredHullRenderer(GTCEu.id("block/machines/" + name))
+                        .workableTieredHullModel(GTCEu.id("block/machines/" + name))
                         .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64, recipeType,
                                 tankScalingFunction.apply(tier), true))
                         .register(),
