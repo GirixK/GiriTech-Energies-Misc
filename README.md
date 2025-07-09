@@ -1,11 +1,8 @@
-# GregTech Addon Template
- Template for GregTech Modern addons on 1.20.1
+## GiriTech Energies: Miscellanea
+The mod which contains features I wouldn't be able to fit into the other modules 
+### Current Features include
+- Casting of Single-use Tools 
 
- Original template by screret, updated by JuiceyBeans
-
-Repositories you can use for additional reference:
-
-- [CosmicCore](https://github.com/Frontiers-PackForge/CosmicCore)
-- [Gregicality Rocketry](https://github.com/Argent-Matter/gcyr/)
-- [Gregtech: Extended Chemistry Extended](https://github.com/jmoiron/Gregtech-Extended-Chemistry)
-- [Juiceycality](https://github.com/JuiceyBeans/Juiceycality)
+### Big thanks to
+- The CEu & GTM devs, for helping
+- GT New Horizons, where I stole the idea of Single-use Tools from
