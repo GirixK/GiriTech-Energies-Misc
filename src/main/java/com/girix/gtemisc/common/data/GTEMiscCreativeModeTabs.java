@@ -5,8 +5,8 @@ import com.girix.gtemisc.GiriTechMisc;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
-
 import com.gregtechceu.gtceu.common.data.GTItems;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 
