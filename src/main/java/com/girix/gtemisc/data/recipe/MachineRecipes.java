@@ -1,6 +1,6 @@
 package com.girix.gtemisc.data.recipe;
 
-import com.girix.gtemisc.GTEMiscConfig;
+import com.girix.gtemisc.config.GTEMiscConfig;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;

@@ -1,6 +1,6 @@
 package com.girix.gtemisc.common.data;
 
-import com.girix.gtemisc.GTEMiscConfig;
+import com.girix.gtemisc.config.GTEMiscConfig;
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 
