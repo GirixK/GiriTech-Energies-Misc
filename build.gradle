@@ -30,7 +30,12 @@ repositories {
         url = 'https://maven.gtceu.com'
         content {
             includeGroup 'com.gregtechceu.gtceu'
+            includeGroup 'brachy.modularui'
         }
+    }
+    maven {
+        name = 'Configuration'
+        url = 'https://repo.repsy.io/mvn/toma/public/'
     }
     maven {
         name 'FirstDarkDev'
@@ -150,9 +155,11 @@ dependencies {
 
     // GregTech and dependencies
     modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
-    modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
+    //modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
-    modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
+    modImplementation("dev.toma.configuration:configuration-${minecraft_version}:${configuration_version}")
+    modImplementation("brachy.modularui:modularui-mc${minecraft_version}:${mui_version}")
+    modImplementation "top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}"
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
