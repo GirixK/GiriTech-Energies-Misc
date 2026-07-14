@@ -5,7 +5,6 @@ import com.girix.gtemisc.data.GTEMiscDatagen;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
-import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -27,7 +26,7 @@ public class GiriTechMisc {
 
     public static final String MOD_ID = "giritechmisc";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate GTEMISC_REGISTRATE = GTRegistrate.create(GiriTechMisc.MOD_ID);
+    public static GTRegistrate GTEMISC_REGISTRATE = GTRegistrate.create(MOD_ID);
 
     public GiriTechMisc() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -35,9 +34,10 @@ public class GiriTechMisc {
         GTEMiscCreativeModeTabs.init();
         GTEMiscItems.init();
 
+        GTEMISC_REGISTRATE.registerEventListeners(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
-        modEventBus.addListener(this::addMaterialRegistries);
         modEventBus.addListener(this::addMaterials);
         modEventBus.addListener(this::modifyMaterials);
         modEventBus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
@@ -49,7 +49,6 @@ public class GiriTechMisc {
         MinecraftForge.EVENT_BUS.register(this);
 
         GTEMiscDatagen.init();
-        GTEMISC_REGISTRATE.registerRegistrate();
     }
 
     // public static ResourceLocation id(String path) {
@@ -61,12 +60,6 @@ public class GiriTechMisc {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {}
-
-    // You MUST have this for custom materials.
-    // Remember to register them not to GT's namespace, but your own.
-    private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(GiriTechMisc.MOD_ID);
-    }
 
     // As well as this.
     private void addMaterials(MaterialEvent event) {
