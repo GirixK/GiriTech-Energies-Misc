@@ -42,8 +42,6 @@ public class GTEMiscMachines {
                             .recipeType(GTEMiscRecipeTypes.TOOL_CASTING_RECIPES)
                             .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
                             .ui(GTSingleblockMachinePanels.GENERAL_MACHINE)
-//                            .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("tool_casting_machine"),
-//                                    GTEMiscRecipeTypes.TOOL_CASTING_RECIPES))
                             .langValue("%s Tool Casting Machine %s".formatted(VLVH[tier], VLVT[tier]))
                             .rotationState(RotationState.NON_Y_AXIS)
                             .workableTieredHullModel(GTCEu.id("block/machines/fluid_solidifier"))

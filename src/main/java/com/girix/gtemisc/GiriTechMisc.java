@@ -26,7 +26,7 @@ public class GiriTechMisc {
 
     public static final String MOD_ID = "giritechmisc";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate GTEMISC_REGISTRATE = GTRegistrate.create(MOD_ID);
+    public static final GTRegistrate GTEMISC_REGISTRATE = GTRegistrate.create(MOD_ID);
 
     public GiriTechMisc() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
