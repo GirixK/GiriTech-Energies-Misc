@@ -5,10 +5,10 @@ dependencies {
     modImplementation(forge.ldlib)
 
     // Registrate
-    modImplementation(forge.registrate)
+    modImplementation(forge.registrate.get())
 
     // Configuration
-    modImplementation(forge.configuration)
+    modImplementation(forge.configuration.get())
 
     // GTCEu
     modImplementation(variantOf(forge.gtceu) { classifier("slim") })
