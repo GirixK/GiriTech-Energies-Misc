@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "giritechmisc:block/machine/hv_flight_pylon",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "giritechmisc:block/machine/hv_flight_pylon"
+    },
+    "facing=south": {
+      "model": "giritechmisc:block/machine/hv_flight_pylon",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "giritechmisc:block/machine/hv_flight_pylon",
+      "y": 270
+    }
+  }
+}
