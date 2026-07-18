@@ -1,6 +1,7 @@
 package com.girix.gtemisc.config;
 
 import com.girix.gtemisc.GiriTechMisc;
+
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;

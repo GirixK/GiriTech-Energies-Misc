@@ -32,6 +32,9 @@ public class GTEMiscItems {
     public static final ItemEntry<Item> SINGLE_USE_CROWBAR_CAST = makeCast("crowbar");
     public static final ItemEntry<Item> SINGLE_USE_SOFT_MALLET_CAST = makeCast("mallet");
 
+    // MagLev
+    public static final ItemEntry<Item> FLIGHT_HARNESS = makeHarness();
+
     private static ItemEntry<Item> makeCast(String toolType) {
         if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
             return GTEMISC_REGISTRATE.item("single_use_" + toolType + "_cast", Item::new)
@@ -46,6 +49,16 @@ public class GTEMiscItems {
         if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
             return GTEMISC_REGISTRATE.item("single_use_" + toolType, Item::new)
                     .lang("Single-use " + FormattingUtil.toEnglishName(toolType))
+                    .register();
+        } else {
+            return null;
+        }
+    }
+
+    private static ItemEntry<Item> makeHarness() {
+        if (GTEMiscConfig.INSTANCE.features.enableFlightPylon) {
+            return GTEMISC_REGISTRATE.item("flight_harness", Item::new)
+                    .lang("MagLev Flight Harness")
                     .register();
         } else {
             return null;

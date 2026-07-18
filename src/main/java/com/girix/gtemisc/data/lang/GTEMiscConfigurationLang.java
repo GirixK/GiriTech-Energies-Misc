@@ -1,7 +1,7 @@
 package com.girix.gtemisc.data.lang;
 
-import com.girix.gtemisc.config.GTEMiscConfig;
 import com.girix.gtemisc.GiriTechMisc;
+import com.girix.gtemisc.config.GTEMiscConfig;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import dev.toma.configuration.Configuration;

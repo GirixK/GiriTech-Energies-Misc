@@ -1,7 +1,7 @@
 package com.girix.gtemisc.common.data;
 
-import com.girix.gtemisc.config.GTEMiscConfig;
 import com.girix.gtemisc.GiriTechMisc;
+import com.girix.gtemisc.config.GTEMiscConfig;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;

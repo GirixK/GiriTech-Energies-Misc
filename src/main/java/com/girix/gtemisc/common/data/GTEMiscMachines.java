@@ -1,5 +1,6 @@
 package com.girix.gtemisc.common.data;
 
+import com.girix.gtemisc.common.machine.FlightPylonMachine;
 import com.girix.gtemisc.config.GTEMiscConfig;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -22,6 +23,7 @@ public class GTEMiscMachines {
     }
 
     public static final MachineDefinition[] TOOL_CASTING_MACHINE;
+    public static final MachineDefinition[] FLIGHT_PYLON;
 
     static {
         if (GTEMiscConfig.INSTANCE.features.enableSingleUseTools) {
@@ -39,6 +41,17 @@ public class GTEMiscMachines {
             TOOL_CASTING_MACHINE = null;
         }
 
+        if (GTEMiscConfig.INSTANCE.features.enableFlightPylon) {
+            FLIGHT_PYLON = registerTieredMachines(GTEMISC_REGISTRATE, "flight_pylon",
+                    FlightPylonMachine::new, (tier, builder) -> builder
+                            .langValue("%s MagLev Pylon %s".formatted(VLVH[tier], VLVT[tier]))
+                            .rotationState(RotationState.NON_Y_AXIS)
+                            .workableTieredHullModel(GTCEu.id("block/machines/macerator"))
+                            .register(),
+                    GTValues.tiersBetween(MV, UV));
+        } else {
+            FLIGHT_PYLON = null;
+        }
     }
 
     public static void init() {}
